@@ -1,6 +1,7 @@
 import torch
-from torchvision import datasets, transforms
+from torchvision import transforms, datasets
 from torch.utils.data import DataLoader, random_split
+import os
 
 def get_dataloaders(config):
     # Data augmentation
@@ -17,9 +18,20 @@ def get_dataloaders(config):
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
 
-    # Load dataset
-    full_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=train_transform)
-    test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=test_transform)
+    # Custom data paths
+    train_data_path = "./data/train"
+    test_data_path = "./data/test"
+
+    # Load dataset từ thư mục
+    full_dataset = datasets.ImageFolder(
+        root=train_data_path,
+        transform=train_transform
+    )
+
+    test_dataset = datasets.ImageFolder(
+        root=test_data_path,
+        transform=test_transform
+    )
 
     # Split train/valid
     train_size = int(config.train_ratio * len(full_dataset))
@@ -27,8 +39,23 @@ def get_dataloaders(config):
     train_dataset, valid_dataset = random_split(full_dataset, [train_size, valid_size])
 
     # Create dataloaders
-    train_loader = DataLoader(train_dataset, batch_size=config.batch_size, shuffle=True)
-    valid_loader = DataLoader(valid_dataset, batch_size=config.batch_size)
-    test_loader = DataLoader(test_dataset, batch_size=config.batch_size)
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=config.batch_size,
+        shuffle=True,
+        num_workers=4
+    )
+    
+    valid_loader = DataLoader(
+        valid_dataset,
+        batch_size=config.batch_size,
+        num_workers=4
+    )
+    
+    test_loader = DataLoader(
+        test_dataset,
+        batch_size=config.batch_size,
+        num_workers=4
+    )
 
     return train_loader, valid_loader, test_loader

@@ -42,4 +42,23 @@ _Predict:_
 
 ![image](https://github.com/user-attachments/assets/71baee68-32d6-4115-8a29-b4959f050ca7)
 
+**4. ResNet:**
 
+_Training Curves:_
+
+![image](https://github.com/user-attachments/assets/b6f32bc1-259c-4ea6-a203-033d15a8b380)
+
+_Predict:_
+
+![image](https://github.com/user-attachments/assets/cbb4e72d-2a4c-4436-a108-a23b1cd7deca)
+
+
+**5. MoblieNet (MoblieNetV2):**
+
+_Training Curves:_
+
+![image](https://github.com/user-attachments/assets/ba951483-4157-4365-b463-3573ea4aad5f)
+
+_Predict:_
+
+![image](https://github.com/user-attachments/assets/98a13860-1fee-4883-aa30-43ff63bec392)

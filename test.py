@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import classification_report
 from utils.dataloader import get_dataloaders
 from utils.metrics import calculate_metrics
-from models import VGG, AlexNet, DenseNet
+from models import VGG, AlexNet, DenseNet, ResNet, MobileNet
 from config import get_config
 
 def test():
@@ -19,6 +19,10 @@ def test():
         model = AlexNet().to(device)
     elif config.model == 'densenet':
         model = DenseNet().to(device)
+    elif config.model == 'resnet':
+        model = ResNet().to(device)
+    elif config.model == 'mobilenet':
+        model = MobileNet().to(device)
     
     model.load_state_dict(torch.load(model_path))
     model.eval()

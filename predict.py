@@ -2,7 +2,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 import argparse
-from models import VGG, AlexNet, DenseNet
+from models import VGG, AlexNet, DenseNet, ResNet, MobileNet
 
 def predict(image_path, model_name='vgg'):
     # Thiết lập device
@@ -15,6 +15,10 @@ def predict(image_path, model_name='vgg'):
         model = AlexNet().to(device)
     elif model_name == 'densenet':
         model = DenseNet().to(device)
+    elif model_name == 'resnet':
+        model = ResNet().to(device)
+    elif model_name == 'mobilenet':
+        model = MobileNet().to(device)
     else:
         raise ValueError(f"Model {model_name} không tồn tại")
 
@@ -49,7 +53,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Dự đoán ảnh CIFAR-10')
     parser.add_argument('image_path', type=str, help='Đường dẫn đến ảnh cần dự đoán')
     parser.add_argument('--model', type=str, default='vgg', 
-                        choices=['alexnet', 'densenet', 'vgg'],
+                        choices=['alexnet', 'densenet', 'vgg', 'resnet', 'mobilenet'],
                         help='Lựa chọn model (mặc định: vgg)')
     
     args = parser.parse_args()

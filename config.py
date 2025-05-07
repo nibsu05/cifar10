@@ -4,7 +4,7 @@ def get_config():
     parser = argparse.ArgumentParser(description='CIFAR-10 Classification')
     
     # Training parameters
-    parser.add_argument('--model', type=str, default='vgg', choices=['alexnet', 'densenet', 'vgg'])
+    parser.add_argument('--model', type=str, default='vgg', choices=['alexnet', 'densenet', 'vgg', 'resnet', 'mobilenet'])
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch_size', type=int, default=128)
     parser.add_argument('--lr', type=float, default=0.001)

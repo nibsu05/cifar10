@@ -5,7 +5,7 @@ from torch.optim.lr_scheduler import StepLR
 from utils.dataloader import get_dataloaders
 from utils.metrics import calculate_metrics
 from utils.visualize import plot_training_curves
-from models import VGG, AlexNet, DenseNet
+from models import VGG, AlexNet, DenseNet, ResNet, MobileNet
 from config import get_config
 
 def train():
@@ -22,6 +22,11 @@ def train():
         model = AlexNet().to(device)
     elif config.model == 'densenet':
         model = DenseNet().to(device)
+    elif config.model == 'resnet':
+        model = ResNet().to(device)
+    elif config.model == 'mobilenet':
+        model = MobileNet().to(device)
+
     
     # Loss function with label smoothing
     criterion = nn.CrossEntropyLoss(label_smoothing=0.1)

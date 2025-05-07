@@ -46,11 +46,11 @@ _Predict:_
 
 _Training Curves:_
 
-![image](https://github.com/user-attachments/assets/b6f32bc1-259c-4ea6-a203-033d15a8b380)
+![image](https://github.com/user-attachments/assets/8ab0c04c-3822-4395-a33a-dae0d38fb754)
 
 _Test Scores:_
 
-![image](https://github.com/user-attachments/assets/f2f42579-3f64-4764-b36d-8be9e6f22813)
+![image](https://github.com/user-attachments/assets/03ff0d40-b688-4fec-80e3-ea4c075b0a19)
 
 _Predict:_
 
@@ -61,11 +61,11 @@ _Predict:_
 
 _Training Curves:_
 
-![image](https://github.com/user-attachments/assets/ba951483-4157-4365-b463-3573ea4aad5f)
+![image](https://github.com/user-attachments/assets/84efa3b2-5171-4f96-b96c-3e21407548b3)
 
 _Test Scores:_
 
-![image](https://github.com/user-attachments/assets/6c541b8a-f219-4056-a128-29382ae01ddd)
+![image](https://github.com/user-attachments/assets/a5435a1a-832e-4627-b0c4-4100388d163e)
 
 _Predict:_
 
